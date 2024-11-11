@@ -1,0 +1,23 @@
+{
+  "name": "sms-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda to send SMS",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaio-giovanni/sms-lambda.git"
+  },
+  "author": "kaio-giovanni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaio-giovanni/sms-lambda/issues"
+  },
+  "homepage": "https://github.com/kaio-giovanni/sms-lambda#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "twilio": "^5.3.5"
+  }
+}

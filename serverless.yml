@@ -1,0 +1,26 @@
+org: organizationName
+service: sendContent
+
+provider:
+  name: aws
+  region: us-east-1
+  httpApi:
+    id: xxxxxxxxxx
+    name: ApiGatewayName
+  runtime: nodejs20.x
+  timeout: 15
+  logRetentionInDays: 14
+  stage: ${env:STAGE}
+  environment:
+    TWILIO_ACCOUNT_SID: ${env:TWILIO_ACCOUNT_SID}
+    TWILIO_AUTH_TOKEN: ${env:TWILIO_AUTH_TOKEN}
+    TWILIO_PHONE_NUMBER: ${env:TWILIO_PHONE_NUMBER}
+
+functions:
+  sendSMS:
+    handler: handler.sendSMS
+    description: Function to send SMS to users
+    events:
+      - httpApi:
+          path: /v1/sendSMS
+          method: post
